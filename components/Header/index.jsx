@@ -1,15 +1,25 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/SimpleLineIcons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 // Assets
 import user_avatar from "../../assets/images/user_avatar.jpg";
 
-const Header = () => {
+const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <View className="px-4 flex flex-row justify-between items-center w-screen">
       <View>
-        <TouchableOpacity activeOpacity={0.8}>
-          <Icon name="menu" size={20} color="#262626" />
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => {
+            setMenuOpen(!menuOpen);
+          }}
+          className="p-2"
+        >
+          <Icon
+            name={menuOpen == true ? "close" : "menu"}
+            size={30}
+            color="#262626"
+          />
         </TouchableOpacity>
       </View>
 

@@ -6,21 +6,23 @@ import foods from "./data";
 
 const FoodCard = () => {
   return foods?.map((food, index) => (
-    <TouchableOpacity
+    <View
       key={index}
-      activeOpacity={0.7}
       className={`border border-gray-200 rounded-xl p-3 px-4 max-w-max w-100 mb-0 ${
         food.isLast == true ? "mr-8" : "mr-4"
       }`}
       style={{ height: "96%" }}
     >
-      <View className="flex justify-center items-center">
+      <TouchableOpacity
+        activeOpacity={0.6}
+        className="flex justify-center items-center"
+      >
         <Image
           source={plate1}
           alt="Food Image"
           style={{ maxWidth: 165, height: 165 }}
         />
-      </View>
+      </TouchableOpacity>
       <View className="mt-3 flex flex-col justify-center items-start">
         <Text className="text-xl text-black font-semibold">{food.name}</Text>
         <Text className="my-1 text-md text-gray-400 font-semibold">
@@ -40,7 +42,7 @@ const FoodCard = () => {
           />
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   ));
 };
 

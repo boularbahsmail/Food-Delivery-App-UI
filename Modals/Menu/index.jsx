@@ -1,15 +1,21 @@
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Modal } from "react-native";
 import HomeIcon from "react-native-vector-icons/Ionicons";
 import PersnIcon from "react-native-vector-icons/Ionicons";
 import HeartIcon from "react-native-vector-icons/Ionicons";
 import CartIcon from "react-native-vector-icons/Ionicons";
 import { useState } from "react";
 
-const Menu = () => {
+const Menu = ({ menuOpen }) => {
   const [active, setActive] = useState("HOME");
 
   return (
-    <View className="absolute bottom-4 left-4 right-4 rounded-full flex flex-row justify-between items-center bg-black py-3 px-4">
+    <View
+      className={
+        menuOpen == true
+          ? "absolute bottom-2 left-2 right-2 rounded-full flex flex-row justify-between items-center bg-black py-3 px-4"
+          : "hidden"
+      }
+    >
       <View>
         <TouchableOpacity
           style={{ height: 40, width: 40 }}

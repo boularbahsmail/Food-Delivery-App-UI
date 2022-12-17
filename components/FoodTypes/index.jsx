@@ -16,7 +16,7 @@ const FoodTypes = () => {
       >
         <ActiveFood />
         <InActiveFood
-          title="Fruits"
+          title="Fresh Fruits"
           foodIcon="fruit-cherries"
           lastChild={false}
         />
